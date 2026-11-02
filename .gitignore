@@ -1,0 +1,18 @@
+# Segredos e configurações locais do Azure Functions
+api/local.settings.json
+.env
+.env.*
+!.env.example
+
+# Dependências e arquivos temporários
+node_modules/
+*.log
+npm-debug.log*
+
+# Áudios gerados localmente: devem ser enviados ao Blob, não ao GitHub
+/audio/**/*.mp3
+/audio/**/*.wav
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db

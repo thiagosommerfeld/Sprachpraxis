@@ -1,0 +1,13 @@
+{
+  "name": "sprachpraxis-api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/functions/*.js",
+  "engines": { "node": ">=22" },
+  "dependencies": {
+    "@azure/cosmos": "^4.0.0",
+    "@azure/storage-blob": "^12.34.0",
+    "@azure/functions": "^4.7.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.35.0"
+  }
+}
