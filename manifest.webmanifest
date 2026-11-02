@@ -1,0 +1,14 @@
+{
+  "name": "Sprachpraxis — Prática de Alemão",
+  "short_name": "Sprachpraxis",
+  "description": "Pratique alemão com frases, áudio e repetição.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#17140f",
+  "theme_color": "#17140f",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
