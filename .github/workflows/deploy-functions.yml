@@ -38,5 +38,5 @@ jobs:
       - name: Publicar na Function App
         uses: Azure/functions-action@v1
         with:
-          app-name: sprachpraxis-api-dcggdua6ggfdehdk
+          app-name: sprachpraxis-api
           package: api
