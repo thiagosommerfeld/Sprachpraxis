@@ -27,7 +27,7 @@ jobs:
         env:
           STORAGE_ACCOUNT: ${{ vars.AZURE_STORAGE_ACCOUNT }}
         run: |
-          for file in sprachpraxis-c1.html audio-config.js frases_antigas.json manifest.webmanifest sw.js icon.svg; do
+          for file in sprachpraxis-c1.html auth-config.js audio-config.js frases_antigas.json manifest.webmanifest sw.js icon.svg; do
             case "$file" in
               *.html) CONTENT_TYPE="text/html" ;;
               *.js) CONTENT_TYPE="application/javascript" ;;

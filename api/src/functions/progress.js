@@ -10,6 +10,23 @@ function principal(req) {
     return header ? JSON.parse(Buffer.from(header, 'base64').toString('utf8')) : null;
   } catch { return null; }
 }
+function authenticatedUser(req) {
+  const identity = principal(req);
+  if (!identity) return null;
+
+  // App Service Authentication (Easy Auth) supplies claims in this format.
+  const claims = Array.isArray(identity.claims) ? identity.claims : [];
+  const values = names => claims
+    .filter(claim => names.includes(String(claim.typ || '').toLowerCase()))
+    .map(claim => String(claim.val || ''));
+  const scopeClaims = values(['scp', 'http://schemas.microsoft.com/identity/claims/scope']);
+  const scopes = scopeClaims.flatMap(value => value.split(/\s+/).filter(Boolean));
+  if (!scopes.includes('access_as_user')) return null;
+
+  const objectIds = values(['oid', 'http://schemas.microsoft.com/identity/claims/objectidentifier']);
+  const userId = objectIds[0] || req.headers.get('x-ms-client-principal-id');
+  return userId ? { userId } : null;
+}
 function mergeMap(a = {}, b = {}) {
   const out = {};
   for (const key of new Set([...Object.keys(a || {}), ...Object.keys(b || {})])) {
@@ -38,8 +55,8 @@ app.http('progress', {
   methods: ['GET', 'POST'], authLevel: 'anonymous',
   handler: async (request, context) => {
     if (!process.env.COSMOS_DB_ENDPOINT || !process.env.COSMOS_DB_KEY) return { status: 500, body: 'Banco não configurado.' };
-    const user = principal(request);
-    if (!user?.userId || !user.userRoles?.includes('authenticated')) return { status: 401, body: 'Autenticação necessária.' };
+    const user = authenticatedUser(request);
+    if (!user?.userId) return { status: 401, body: 'Entre com sua conta Microsoft para sincronizar o progresso.' };
     const userId = user.userId;
     try {
       if (request.method === 'GET') {

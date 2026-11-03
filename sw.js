@@ -1,7 +1,8 @@
-const CACHE_NAME = 'sprachpraxis-shell-v1';
+const CACHE_NAME = 'sprachpraxis-shell-v2';
 const APP_FILES = [
   './',
   './sprachpraxis-c1.html',
+  './auth-config.js',
   './audio-config.js',
   './frases_antigas.json',
   './manifest.webmanifest',
