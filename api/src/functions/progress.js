@@ -12,20 +12,20 @@ function principal(req) {
 }
 function authenticatedUser(req) {
   const identity = principal(req);
-  if (!identity) return null;
+  if (!identity) return { error: 'principal_missing' };
 
   // App Service Authentication (Easy Auth) supplies claims in this format.
   const claims = Array.isArray(identity.claims) ? identity.claims : [];
-  const values = names => claims
-    .filter(claim => names.includes(String(claim.typ || '').toLowerCase()))
+  const values = predicate => claims
+    .filter(claim => predicate(String(claim.typ || '').toLowerCase()))
     .map(claim => String(claim.val || ''));
-  const scopeClaims = values(['scp', 'http://schemas.microsoft.com/identity/claims/scope']);
-  const scopes = scopeClaims.flatMap(value => value.split(/\s+/).filter(Boolean));
-  if (!scopes.includes('access_as_user')) return null;
+  const scopeClaims = values(type => type === 'scp' || type === 'scope' || type.endsWith('/scp') || type.endsWith('/scope'));
+  const scopes = scopeClaims.flatMap(value => value.split(/\s+/).filter(Boolean).map(scope => scope.toLowerCase()));
+  if (!scopes.some(scope => scope === 'access_as_user' || scope.endsWith('/access_as_user'))) return { error: 'scope_missing' };
 
-  const objectIds = values(['oid', 'http://schemas.microsoft.com/identity/claims/objectidentifier']);
+  const objectIds = values(type => type === 'oid' || type.endsWith('/objectidentifier'));
   const userId = objectIds[0] || req.headers.get('x-ms-client-principal-id');
-  return userId ? { userId } : null;
+  return userId ? { userId } : { error: 'user_id_missing' };
 }
 function mergeMap(a = {}, b = {}) {
   const out = {};
@@ -56,7 +56,7 @@ app.http('progress', {
   handler: async (request, context) => {
     if (!process.env.COSMOS_DB_ENDPOINT || !process.env.COSMOS_DB_KEY) return { status: 500, body: 'Banco não configurado.' };
     const user = authenticatedUser(request);
-    if (!user?.userId) return { status: 401, body: 'Entre com sua conta Microsoft para sincronizar o progresso.' };
+    if (user.error) return { status: 401, body: `Autenticação recusada: ${user.error}.` };
     const userId = user.userId;
     try {
       if (request.method === 'GET') {
