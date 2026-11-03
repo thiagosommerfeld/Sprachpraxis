@@ -22,7 +22,7 @@
   <div id="cards"></div><button id="loadMore" class="btn hidden">Carregar mais frases</button>
   <div class="backup"><button class="btn" id="exportBtn">Baixar backup do progresso</button><label class="btn" for="progressFile">Importar progresso antigo</label><input id="progressFile" type="file" accept=".json,application/json" hidden><span class="notice">O progresso sincroniza ao entrar com GitHub; sem login, fica neste navegador.</span><p class="notice">No Android, use os MP3 do Qwen para continuar ouvindo com a tela apagada. A voz de fallback do navegador pode parar quando o app fica em segundo plano.</p></div>
 </section></main>
-<script src="https://alcdn.msauth.net/browser/2.38.4/js/msal-browser.min.js"></script>
+<script src="https://alcdn.msftauth.net/browser/2.35.0/js/msal-browser.min.js" integrity="sha384-PARf28kmic36Ve+O3DnUerRXFtOQ7ZDqRDGpLcbljly5/N39T2OV3kt3QsWOKeAX" crossorigin="anonymous"></script>
 <script src="./auth-config.js"></script>
 <script src="./audio-config.js"></script>
 <script>
@@ -33,7 +33,7 @@ const $=id=>document.getElementById(id);
 const APP_CONFIG=window.SPRACHPAXIS_CONFIG||{};
 const API_BASE=(APP_CONFIG.apiBaseUrl||'').replace(/\/+$/,'');
 const API_SCOPE=APP_CONFIG.apiClientId?`api://${APP_CONFIG.apiClientId}/access_as_user`:'';
-let msalClient=null;
+let msalClient=null,authError='';
 currentAudio=$('lessonAudio');
 function setStatus(message){$('status').textContent=message;}
 function migrateMap(values={}){const mapped={};for(const [key,value] of Object.entries(values)){if(SENTENCES.some(s=>s.id===key)){mapped[key]=value;continue;}if(/^\d+$/.test(key)){const sentence=SENTENCES[Number(key)];if(sentence)mapped[sentence.id]=value;}}return mapped;}
@@ -56,24 +56,30 @@ function updateAuthUi(){
     $('userInfo').textContent=`Conectado: ${user.name||user.username||'Microsoft'}`;
     $('loginBtn').classList.add('hidden');$('logoutBtn').classList.remove('hidden');
   }else{
-    $('userInfo').textContent='Progresso local neste aparelho';
+    $('userInfo').textContent=authError?'Login Microsoft indisponível · progresso local neste aparelho':'Progresso local neste aparelho';
     $('loginBtn').classList.remove('hidden');$('logoutBtn').classList.add('hidden');
   }
 }
 async function auth(){
-  if(!window.msal||!APP_CONFIG.tenantId||!APP_CONFIG.webClientId||!API_SCOPE){
-    $('loginBtn').classList.add('hidden');updateAuthUi();return;
+  if(!window.msal){
+    authError='A biblioteca de autenticação Microsoft não carregou.';
+    updateAuthUi();return;
+  }
+  if(!APP_CONFIG.tenantId||!APP_CONFIG.webClientId||!API_SCOPE){
+    authError='A configuração do login Microsoft está incompleta.';
+    updateAuthUi();return;
   }
   try{
     msalClient=new window.msal.PublicClientApplication({auth:{clientId:APP_CONFIG.webClientId,authority:`https://login.microsoftonline.com/${APP_CONFIG.tenantId}`,redirectUri:`${location.origin}/`},cache:{cacheLocation:'localStorage'}});
     const result=await msalClient.handleRedirectPromise();
     user=result?.account||msalClient.getAllAccounts()[0]||null;
     if(user)msalClient.setActiveAccount(user);
-  }catch(error){console.error('Falha ao iniciar autenticação Microsoft:',error);user=null;}
+  }catch(error){console.error('Falha ao iniciar autenticação Microsoft:',error);user=null;authError=error.message||'Falha ao iniciar a autenticação.';}
   updateAuthUi();
 }
 async function login(){
-  if(!msalClient)return;
+  if(!msalClient){setStatus(authError||'O login Microsoft não foi inicializado.');return;}
+  setStatus('Abrindo o login Microsoft…');
   await msalClient.loginRedirect({scopes:[API_SCOPE],redirectUri:`${location.origin}/`});
 }
 async function logout(){
@@ -132,6 +138,6 @@ $('loadMore').onclick=()=>{visibleCount+=60;renderCards(false);};
 $('exportBtn').onclick=()=>{localSave();const blob=new Blob([JSON.stringify({reps,reviews,ratings,spoken,audioSeconds},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sprachpraxis-progresso.json';a.click();URL.revokeObjectURL(a.href);};
 $('progressFile').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{const old=JSON.parse(await file.text());reps=mergeMap(reps,migrateMap(old.reps||{}));reviews=mergeMap(reviews,migrateMap(old.reviews||{}));ratings=mergeRatings(ratings,migrateMap(old.ratings||{}));spoken=Math.max(spoken,Number(old.spoken)||0);audioSeconds=Math.max(audioSeconds,Number(old.audioSeconds)||0);localSave();updateStats();if(user)await syncToCloud();setStatus('Progresso importado e sincronizado.');}catch{setStatus('Não foi possível importar esse backup.');}e.target.value='';};
 installMediaControls();if('serviceWorker'in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js').catch(()=>{});init();
-$('loginBtn').onclick=()=>login().catch(error=>{console.error(error);setStatus('Não foi possível iniciar o login Microsoft.');});
+$('loginBtn').onclick=()=>login().catch(error=>{console.error('Falha ao iniciar login Microsoft:',error);setStatus(`Falha no login Microsoft: ${error.errorCode||error.message||'erro desconhecido'}`);});
 $('logoutBtn').onclick=()=>logout().catch(error=>{console.error(error);setStatus('Não foi possível sair da conta Microsoft.');});
 </script></body></html>
