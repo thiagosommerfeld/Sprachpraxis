@@ -1,8 +1,8 @@
 {
-  "name": "Sprachpraxis — Prática de Alemão",
+  "name": "Sprachpraxis — Deutsch lernen",
   "short_name": "Sprachpraxis",
-  "description": "Pratique alemão com frases, áudio e repetição.",
-  "lang": "pt-BR",
+  "description": "Lerne Deutsch mit Sätzen, Audio und Wiederholungen.",
+  "lang": "de",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -1,38 +1,54 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="de">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17140f"><link rel="manifest" href="./manifest.webmanifest">
-<title>Sprachpraxis — Prática de Alemão</title>
+<title>Sprachpraxis — Deutsch lernen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Condensed:wght@600;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#17140f;--panel:#221e17;--panel2:#2b261d;--amber:#f5b942;--cream:#ece6d6;--blue:#3f6e9e;--muted:#8c8474;--line:#3a3327}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font-family:'Work Sans',sans-serif;min-height:100vh}#lessonAudio{display:none}.wrap{max-width:960px;margin:auto;padding:24px 18px 60px}.auth{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--panel2);padding:10px 18px;font:12px 'IBM Plex Mono',monospace}.auth a{color:var(--amber);margin-left:12px}header,.stat,.panel,.sent{border:1px solid var(--line);background:var(--panel)}header{padding:18px 20px;margin:18px 0}h1,h2{font-family:'Archivo Condensed',sans-serif;text-transform:uppercase;margin:0}h1{color:var(--amber);letter-spacing:2px;font-size:30px}.sub,.label{font:11px 'IBM Plex Mono',monospace;letter-spacing:1px;color:var(--muted);text-transform:uppercase}.sub{margin-top:5px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}.stat{text-align:center;padding:12px}.big{display:block;color:var(--amber);font:600 23px 'IBM Plex Mono',monospace}.stat small{font-size:10px;color:var(--muted);text-transform:uppercase}.panel{padding:12px;margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.btn,select{font:11px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--cream);background:var(--panel);border:1px solid var(--line);padding:8px 10px;cursor:pointer}.btn:hover,.btn.active{border-color:var(--amber);color:var(--amber)}.btn.primary{background:var(--blue);border-color:var(--blue)}.rate{width:100px;accent-color:var(--amber)}.islands{margin:20px 0}.islands-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.islands-head p{font-size:13px;color:var(--muted)}.island-list{display:flex;flex-wrap:wrap;gap:7px}.island{font:12px 'Work Sans',sans-serif;text-transform:none;display:flex;gap:8px;align-items:center}.island small{color:var(--muted);font:10px 'IBM Plex Mono',monospace}.sent{padding:16px;margin:10px 0}.sent.playing{border-color:var(--amber);box-shadow:0 0 12px #f5b94226}.sent-top{display:flex;justify-content:space-between;gap:12px}.de{font:16px/1.5 'IBM Plex Mono',monospace;color:var(--amber)}.pt{font-size:14px;color:var(--muted);margin-top:8px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.badge{font:11px 'IBM Plex Mono',monospace;color:var(--amber);white-space:nowrap}.card-meta{display:flex;align-items:center;gap:12px}.rating{display:flex;align-items:center;gap:2px;white-space:nowrap}.star-btn,.rating-reset{all:unset;cursor:pointer;font-size:23px;line-height:1;color:#657084;padding:1px}.star-btn.selected{color:var(--amber)}.star-btn:hover,.rating-reset:hover{color:var(--cream)}.rating-reset{font-size:17px;margin-right:4px}.hidden{display:none!important}.notice{font-size:13px;color:var(--muted);margin:8px 0}.backup{margin-top:22px;border-top:1px solid var(--line);padding-top:16px}#loadMore{display:block;margin:14px auto}@media(max-width:600px){.stats{grid-template-columns:1fr}.wrap{padding:14px 12px 40px}.islands-head{align-items:start}.sent-top{flex-direction:column}.card-meta{align-self:flex-end}}
+:root{--bg:#17140f;--panel:#221e17;--panel2:#2b261d;--amber:#f5b942;--cream:#ece6d6;--blue:#3f6e9e;--muted:#8c8474;--line:#3a3327}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font-family:'Work Sans',sans-serif;min-height:100vh}#lessonAudio{display:none}.wrap{max-width:960px;margin:auto;padding:24px 18px 60px}.auth{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--panel2);padding:10px 18px;font:12px 'IBM Plex Mono',monospace}.auth a{color:var(--amber);margin-left:12px}header,.stat,.panel,.sent{border:1px solid var(--line);background:var(--panel)}header{padding:18px 20px;margin:18px 0}h1,h2{font-family:'Archivo Condensed',sans-serif;text-transform:uppercase;margin:0}h1{color:var(--amber);letter-spacing:2px;font-size:30px}.sub,.label{font:11px 'IBM Plex Mono',monospace;letter-spacing:1px;color:var(--muted);text-transform:uppercase}.sub{margin-top:5px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}.stat{text-align:center;padding:12px}.big{display:block;color:var(--amber);font:600 23px 'IBM Plex Mono',monospace}.stat small{font-size:10px;color:var(--muted);text-transform:uppercase}.panel{padding:12px;margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.practice-toolbar{position:sticky;top:0;z-index:20;background:#221e17ed;backdrop-filter:blur(12px);box-shadow:0 8px 18px #0006}.btn,select{font:11px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--cream);background:var(--panel);border:1px solid var(--line);padding:8px 10px;cursor:pointer}.btn:hover,.btn.active{border-color:var(--amber);color:var(--amber)}.btn.primary{background:var(--blue);border-color:var(--blue)}.rate{width:100px;accent-color:var(--amber)}.islands{margin:20px 0}.islands-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.islands-head p{font-size:13px;color:var(--muted)}.macro-list{display:grid;gap:8px}.macro-island{border:1px solid var(--line);background:var(--panel);padding:8px}.macro-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;font:600 14px 'Work Sans',sans-serif;color:var(--cream);background:transparent;border:0;padding:7px;cursor:pointer}.macro-toggle:hover,.macro-toggle[aria-expanded="true"]{color:var(--amber)}.macro-count{font:10px 'IBM Plex Mono',monospace;color:var(--muted);white-space:nowrap}.micro-islands{display:none;flex-wrap:wrap;gap:7px;padding:7px}.micro-islands.expanded{display:flex}.island{font:12px 'Work Sans',sans-serif;text-transform:none;display:flex;gap:8px;align-items:center}.island small{color:var(--muted);font:10px 'IBM Plex Mono',monospace}.sent{padding:16px;margin:10px 0}.sent.playing{border-color:var(--amber);box-shadow:0 0 12px #f5b94226}.sent-top{display:flex;justify-content:space-between;gap:12px}.de{font:16px/1.5 'IBM Plex Mono',monospace;color:var(--amber)}.pt{font-size:14px;color:var(--muted);margin-top:8px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.badge{font:11px 'IBM Plex Mono',monospace;color:var(--amber);white-space:nowrap}.card-meta{display:flex;align-items:center;gap:12px}.rating{display:flex;align-items:center;gap:2px;white-space:nowrap}.star-btn,.rating-reset{all:unset;cursor:pointer;font-size:23px;line-height:1;color:#657084;padding:1px}.star-btn.selected{color:var(--amber)}.star-btn:hover,.rating-reset:hover{color:var(--cream)}.rating-reset{font-size:17px;margin-right:4px}.hidden{display:none!important}.notice{font-size:13px;color:var(--muted);margin:8px 0}.footer{text-align:center;color:var(--muted);font:11px 'IBM Plex Mono',monospace;padding:18px 0 4px}#loadMore{display:block;margin:14px auto}@media(max-width:600px){.stats{grid-template-columns:1fr}.wrap{padding:14px 12px 40px}.practice-toolbar{top:0}.islands-head{align-items:start}.sent-top{flex-direction:column}.card-meta{align-self:flex-end}}
 </style></head>
 <body>
-<div class="auth"><span id="userInfo">Progresso local neste aparelho</span><span><button class="btn" id="loginBtn" type="button">Entrar com Microsoft para sincronizar</button><button class="btn hidden" id="logoutBtn" type="button">Sair</button></span></div>
+<div class="auth"><span id="userInfo">Fortschritt nur auf diesem Gerät</span><span><button class="btn" id="loginBtn" type="button">Mit Microsoft anmelden und synchronisieren</button><button class="btn hidden" id="logoutBtn" type="button">Abmelden</button></span></div>
 <audio id="lessonAudio" preload="none" playsinline></audio>
 <main class="wrap">
-<header><h1>Sprachpraxis</h1><div class="sub">Deutsch C1 · Imersão e repetição</div></header>
-<div id="status" class="notice">Carregando frases…</div>
+<header><h1>Sprachpraxis</h1><div class="sub">Deutsch C1 · Hören und Wiederholen</div></header>
+<div id="status" class="notice">Lade Sätze …</div>
 <section id="app" class="hidden">
-  <div class="stats"><div class="stat"><span class="big" id="minutes">0</span><small>Minutos ouvidos</small></div><div class="stat"><span class="big" id="practiced">0</span><small>Frases praticadas</small></div><div class="stat"><span class="big" id="repetitions">0</span><small>Repetições totais</small></div></div>
-  <div class="panel"><button class="btn active" id="shadowBtn">Shadowing · Alemão</button><button class="btn" id="recallBtn">Active recall · Português</button><button class="btn" id="dueBtn">Revisões pendentes</button><button class="btn primary" id="playAllBtn">▶ Tocar tudo</button><button class="btn" id="stopBtn">■ Parar</button><label class="label" for="rate">Velocidade</label><input id="rate" class="rate" type="range" min="0.7" max="1.2" step="0.05" value="0.95"><span class="label" id="rateValue">0.95×</span></div>
-  <section class="islands"><div class="islands-head"><div><h2>Ilhas de linguagem</h2><p>Selecione uma ilha para praticar apenas suas frases.</p></div><button class="btn" id="allBtn">Ver todas</button></div><div id="islands" class="island-list"></div></section>
-  <div class="panel"><label class="label" for="ratingFilter">Filtrar por nota</label><select id="ratingFilter" aria-label="Filtrar frases por quantidade de estrelas"><option value="all">Todas as notas</option><option value="0">Sem nota</option><option value="1">1 estrela</option><option value="2">2 estrelas</option><option value="3">3 estrelas</option><option value="4">4 estrelas</option><option value="5">5 estrelas</option></select></div>
-  <div id="cards"></div><button id="loadMore" class="btn hidden">Carregar mais frases</button>
-  <div class="backup"><button class="btn" id="exportBtn">Baixar backup do progresso</button><label class="btn" for="progressFile">Importar progresso antigo</label><input id="progressFile" type="file" accept=".json,application/json" hidden><span class="notice">O progresso sincroniza ao entrar com GitHub; sem login, fica neste navegador.</span><p class="notice">No Android, use os MP3 do Qwen para continuar ouvindo com a tela apagada. A voz de fallback do navegador pode parar quando o app fica em segundo plano.</p></div>
-</section></main>
+  <div class="stats"><div class="stat"><span class="big" id="minutes">0</span><small>Gehörte Minuten</small></div><div class="stat"><span class="big" id="practiced">0</span><small>Geübte Sätze</small></div><div class="stat"><span class="big" id="repetitions">0</span><small>Wiederholungen insgesamt</small></div></div>
+  <div class="panel practice-toolbar"><button class="btn active" id="shadowBtn">Nachsprechen · Deutsch</button><button class="btn" id="recallBtn">Aktiver Abruf · Portugiesisch</button><button class="btn" id="dueBtn">Fällige Wiederholungen</button><button class="btn primary" id="playAllBtn">▶ Alles abspielen</button><button class="btn" id="stopBtn">■ Stoppen</button><label class="label" for="rate">Geschwindigkeit</label><input id="rate" class="rate" type="range" min="0.7" max="1.2" step="0.05" value="0.95"><span class="label" id="rateValue">0,95×</span></div>
+  <section class="islands"><div class="islands-head"><div><h2>Lerninseln</h2><p>Öffne ein Oberthema und wähle eine Insel.</p></div><button class="btn active" id="allBtn">Alle Sätze</button></div><div id="islands" class="macro-list"></div></section>
+  <div class="panel"><label class="label" for="ratingFilter">Nach Bewertung filtern</label><select id="ratingFilter" aria-label="Sätze nach Sternen filtern"><option value="all">Alle Bewertungen</option><option value="0">Ohne Bewertung</option><option value="1">1 Stern</option><option value="2">2 Sterne</option><option value="3">3 Sterne</option><option value="4">4 Sterne</option><option value="5">5 Sterne</option></select></div>
+  <div id="cards"></div><button id="loadMore" class="btn hidden">Mehr Sätze laden</button>
+</section><footer class="footer">Erstellt von Thiago Sommerfeld</footer></main>
 <script src="https://alcdn.msftauth.net/browser/2.35.0/js/msal-browser.min.js" integrity="sha384-PARf28kmic36Ve+O3DnUerRXFtOQ7ZDqRDGpLcbljly5/N39T2OV3kt3QsWOKeAX" crossorigin="anonymous"></script>
 <script src="./auth-config.js"></script>
 <script src="./audio-config.js"></script>
 <script>
 'use strict';
 const STORAGE_KEY='sprachpraxis-cloud-v2';
-let SENTENCES=[],reps={},reviews={},ratings={},spoken=0,audioSeconds=0,user=null,activeIsland='Todos',mode='shadow',dueOnly=false,ratingFilter='all',rate=.95,playingAll=false,queueSkipDirection=1,currentAudio=null,currentAudioUrl=null,currentAudioResolve=null,currentSentence=null,syncTimer=null,visibleCount=60;
+let SENTENCES=[],reps={},reviews={},ratings={},spoken=0,audioSeconds=0,user=null,activeIsland='Alle',mode='shadow',dueOnly=false,ratingFilter='all',rate=.95,playingAll=false,queueSkipDirection=1,currentAudio=null,currentAudioUrl=null,currentAudioResolve=null,currentSentence=null,syncTimer=null,visibleCount=60;
 const $=id=>document.getElementById(id);
 const APP_CONFIG=window.SPRACHPAXIS_CONFIG||{};
 const API_BASE=(APP_CONFIG.apiBaseUrl||'').replace(/\/+$/,'');
 const API_SCOPE=APP_CONFIG.apiClientId?`api://${APP_CONFIG.apiClientId}/access_as_user`:'';
+const TOPIC_LABELS={
+  "Ações e tarefas":"Handlungen und Aufgaben","Alemão coloquial":"Umgangssprache","Argumentação e discussão":"Argumentieren und Diskutieren","Behörden e burocracia":"Behörden und Bürokratie","Bewerbungsgespräche":"Bewerbungsgespräche","Características e descrições":"Eigenschaften und Beschreibungen","Casa e vida diária":"Wohnen und Alltag","Ciência, cultura e reflexão":"Wissenschaft, Kultur und Reflexion","Cloud & DevOps":"Cloud & DevOps","Comida e restaurantes":"Essen und Restaurants","Compras e dinheiro":"Einkaufen und Geld","Compras e serviços":"Einkaufen und Dienstleistungen","Comunicação avançada":"Fortgeschrittene Kommunikation","Comunicação e opiniões":"Kommunikation und Meinungen","Cotidiano C1 e relações":"Alltag auf C1-Niveau","Cotidiano e conversa":"Alltag und Gespräche","Cuidado e relações":"Fürsorge und Beziehungen","IT e Cyber Security":"IT und Cybersicherheit","Natureza e clima":"Natur und Klima","Pessoas e relações":"Menschen und Beziehungen","Redemittel e frases-base":"Redemittel und Satzbausteine","Saúde e corpo":"Gesundheit und Körper","Saúde e médico":"Gesundheit und Arztbesuch","Sentimentos e decisões":"Gefühle und Entscheidungen","Sociedade e serviços":"Gesellschaft und Dienstleistungen","Tecnologia e mídia":"Technologie und Medien","Tempo e rotina":"Zeit und Tagesablauf","Tempo para pensar":"Zeit zum Nachdenken","Trabalho e desafios":"Arbeit und Herausforderungen","Trabalho e estudos":"Arbeit und Studium","Trabalho, estratégia e liderança":"Arbeit, Strategie und Führung","Transporte e viagens":"Verkehr und Reisen","Universidade e estudos":"Universität und Studium","Vida cotidiana e decisões":"Alltag und Entscheidungen","Vida pública e sociedade":"Öffentlichkeit und Gesellschaft"
+};
+const MACRO_GROUPS={
+  "Alltag & Kommunikation":["Alemão coloquial","Comunicação avançada","Comunicação e opiniões","Cotidiano C1 e relações","Cotidiano e conversa","Redemittel e frases-base","Tempo para pensar"],
+  "Menschen & Beziehungen":["Características e descrições","Cuidado e relações","Pessoas e relações","Sentimentos e decisões"],
+  "Arbeit & Studium":["Ações e tarefas","Bewerbungsgespräche","Cloud & DevOps","IT e Cyber Security","Trabalho e desafios","Trabalho e estudos","Trabalho, estratégia e liderança","Universidade e estudos"],
+  "Gesellschaft & Öffentlichkeit":["Argumentação e discussão","Behörden e burocracia","Ciência, cultura e reflexão","Sociedade e serviços","Vida pública e sociedade"],
+  "Wohnen & Tagesablauf":["Casa e vida diária","Tempo e rotina","Vida cotidiana e decisões"],
+  "Essen & Einkaufen":["Comida e restaurantes","Compras e dinheiro","Compras e serviços"],
+  "Verkehr & Reisen":["Transporte e viagens"],
+  "Gesundheit & Körper":["Saúde e corpo","Saúde e médico"],
+  "Natur & Klima":["Natureza e clima"],
+  "Technik & Medien":["Tecnologia e mídia"]
+};
+const expandedMacros=new Set();
+function topicLabel(topic){return TOPIC_LABELS[topic]||topic;}
 let msalClient=null,authError='';
 currentAudio=$('lessonAudio');
 function setStatus(message){$('status').textContent=message;}
@@ -53,20 +69,20 @@ function setRating(id,value){ratings[id]={value,updatedAt:new Date().toISOString
 function queueSync(){localSave();updateStats();if(!user)return;clearTimeout(syncTimer);syncTimer=setTimeout(syncToCloud,300);}
 function updateAuthUi(){
   if(user){
-    $('userInfo').textContent=`Conectado: ${user.name||user.username||'Microsoft'}`;
+    $('userInfo').textContent=`Angemeldet: ${user.name||user.username||'Microsoft'}`;
     $('loginBtn').classList.add('hidden');$('logoutBtn').classList.remove('hidden');
   }else{
-    $('userInfo').textContent=authError?'Login Microsoft indisponível · progresso local neste aparelho':'Progresso local neste aparelho';
+    $('userInfo').textContent=authError?'Microsoft-Anmeldung nicht verfügbar · Fortschritt nur auf diesem Gerät':'Fortschritt nur auf diesem Gerät';
     $('loginBtn').classList.remove('hidden');$('logoutBtn').classList.add('hidden');
   }
 }
 async function auth(){
   if(!window.msal){
-    authError='A biblioteca de autenticação Microsoft não carregou.';
+    authError='Die Microsoft-Anmeldung konnte nicht geladen werden.';
     updateAuthUi();return;
   }
   if(!APP_CONFIG.tenantId||!APP_CONFIG.webClientId||!API_SCOPE){
-    authError='A configuração do login Microsoft está incompleta.';
+    authError='Die Microsoft-Anmeldung ist unvollständig konfiguriert.';
     updateAuthUi();return;
   }
   try{
@@ -74,12 +90,12 @@ async function auth(){
     const result=await msalClient.handleRedirectPromise();
     user=result?.account||msalClient.getAllAccounts()[0]||null;
     if(user)msalClient.setActiveAccount(user);
-  }catch(error){console.error('Falha ao iniciar autenticação Microsoft:',error);user=null;authError=error.message||'Falha ao iniciar a autenticação.';}
+  }catch(error){console.error('Fehler beim Start der Microsoft-Anmeldung:',error);user=null;authError=error.message||'Die Anmeldung konnte nicht gestartet werden.';}
   updateAuthUi();
 }
 async function login(){
-  if(!msalClient){setStatus(authError||'O login Microsoft não foi inicializado.');return;}
-  setStatus('Abrindo o login Microsoft…');
+  if(!msalClient){setStatus(authError||'Die Microsoft-Anmeldung wurde nicht initialisiert.');return;}
+  setStatus('Microsoft-Anmeldung wird geöffnet …');
   await msalClient.loginRedirect({scopes:[API_SCOPE],redirectUri:`${location.origin}/`});
 }
 async function logout(){
@@ -91,53 +107,75 @@ async function accessToken(){
   const result=await msalClient.acquireTokenSilent({scopes:[API_SCOPE],account:user});
   return result.accessToken;
 }
-async function syncToCloud(){if(!user||!API_BASE)return;try{const token=await accessToken();if(!token)throw new Error('Token ausente');const r=await fetch(`${API_BASE}/progress`,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${token}`},body:JSON.stringify({reps,reviews,ratings,spoken,audioSeconds})});if(!r.ok)throw new Error(`HTTP ${r.status}`);const cloud=await r.json();reps=mergeMap(reps,cloud.reps);reviews=mergeMap(reviews,cloud.reviews);ratings=mergeRatings(ratings,cloud.ratings||{});spoken=Math.max(spoken,Number(cloud.spoken)||0);audioSeconds=Math.max(audioSeconds,Number(cloud.audioSeconds)||0);localSave();updateStats();}catch(e){console.warn('Sincronização pendente:',e);setStatus('Progresso salvo neste aparelho; a sincronização será tentada novamente.');}}
-async function loadSentences(){const seedResponse=await fetch('./frases_antigas.json');if(!seedResponse.ok)throw Error('Não consegui carregar o pacote de frases.');const seed=await seedResponse.json();const order=new Map(seed.map((s,i)=>[s.id,i]));try{if(!API_BASE)throw Error('API não configurada');const r=await fetch(`${API_BASE}/sentences`);if(!r.ok)throw Error('API');const data=await r.json();if(Array.isArray(data)&&data.length){SENTENCES=data.sort((a,b)=>(order.get(a.id)??Number.MAX_SAFE_INTEGER)-(order.get(b.id)??Number.MAX_SAFE_INTEGER)||String(a.id).localeCompare(String(b.id)));return;}}catch{}SENTENCES=seed;}
-async function init(){await auth();try{await loadSentences();localLoad();if(user)await syncToCloud();setStatus(`${SENTENCES.length} frases prontas.`);}catch(e){setStatus(e.message||'Falha ao carregar frases.');} $('app').classList.remove('hidden');renderIslands();renderCards();updateStats();}
+async function syncToCloud(){if(!user||!API_BASE)return;try{const token=await accessToken();if(!token)throw new Error('Token fehlt');const r=await fetch(`${API_BASE}/progress`,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${token}`},body:JSON.stringify({reps,reviews,ratings,spoken,audioSeconds})});if(!r.ok)throw new Error(`HTTP ${r.status}`);const cloud=await r.json();reps=mergeMap(reps,cloud.reps);reviews=mergeMap(reviews,cloud.reviews);ratings=mergeRatings(ratings,cloud.ratings||{});spoken=Math.max(spoken,Number(cloud.spoken)||0);audioSeconds=Math.max(audioSeconds,Number(cloud.audioSeconds)||0);localSave();updateStats();}catch(e){console.warn('Synchronisierung ausstehend:',e);setStatus('Fortschritt auf diesem Gerät gespeichert. Die Synchronisierung wird erneut versucht.');}}
+async function loadSentences(){const seedResponse=await fetch('./frases_antigas.json');if(!seedResponse.ok)throw Error('Das Satzpaket konnte nicht geladen werden.');const seed=await seedResponse.json();const order=new Map(seed.map((s,i)=>[s.id,i]));try{if(!API_BASE)throw Error('API ist nicht konfiguriert');const r=await fetch(`${API_BASE}/sentences`);if(!r.ok)throw Error('API');const data=await r.json();if(Array.isArray(data)&&data.length){SENTENCES=data.sort((a,b)=>(order.get(a.id)??Number.MAX_SAFE_INTEGER)-(order.get(b.id)??Number.MAX_SAFE_INTEGER)||String(a.id).localeCompare(String(b.id)));return;}}catch{}SENTENCES=seed;}
+async function init(){await auth();try{await loadSentences();localLoad();if(user)await syncToCloud();setStatus(SENTENCES.length+' Sätze geladen.');}catch(e){setStatus(e.message||'Sätze konnten nicht geladen werden.');} $('app').classList.remove('hidden');renderIslands();renderCards();updateStats();}
 function updateStats(){$('minutes').textContent=Math.round(audioSeconds/60);$('practiced').textContent=spoken;$('repetitions').textContent=Object.values(reps).reduce((a,b)=>a+(Number(b)||0),0);}
 function dueIds(){const soon=Date.now()+86400000;return SENTENCES.filter(s=>reviews[s.id]&&reviews[s.id]<=soon).map(s=>s.id);}
-function renderIslands(){const host=$('islands');host.replaceChildren();const topics=[...new Set(SENTENCES.map(s=>s.topic).filter(Boolean))];topics.forEach(topic=>{const b=document.createElement('button');b.className='btn island'+(topic===activeIsland?' active':'');const label=document.createElement('span');label.textContent=topic;const count=document.createElement('small');count.textContent=`${SENTENCES.filter(s=>s.topic===topic).length} frases`;b.append(label,count);b.onclick=()=>{activeIsland=topic;renderIslands();renderCards();};host.appendChild(b);});}
-function filtered(){let list=activeIsland==='Todos'?SENTENCES:SENTENCES.filter(s=>s.topic===activeIsland);if(dueOnly){const due=new Set(dueIds());list=list.filter(s=>due.has(s.id));}if(ratingFilter!=='all'){const target=Number(ratingFilter);list=list.filter(s=>ratingValue(s.id)===target);}return list;}
+function renderIslands(){
+  const host=$('islands');host.replaceChildren();
+  const available=new Set(SENTENCES.map(s=>s.topic).filter(Boolean));
+  const allButton=$('allBtn');allButton.classList.toggle('active',activeIsland==='Alle');
+  Object.entries(MACRO_GROUPS).forEach(([macro,topics])=>{
+    const matching=topics.filter(topic=>available.has(topic));if(!matching.length)return;
+    const section=document.createElement('section');section.className='macro-island';
+    const toggle=document.createElement('button');toggle.type='button';toggle.className='macro-toggle';
+    const expanded=expandedMacros.has(macro);toggle.setAttribute('aria-expanded',String(expanded));
+    const title=document.createElement('span');title.textContent=(expanded?'▾ ':'▸ ')+macro;
+    const count=document.createElement('span');count.className='macro-count';
+    const sentenceCount=SENTENCES.filter(s=>matching.includes(s.topic)).length;
+    count.textContent=matching.length+' Themen · '+sentenceCount+' Sätze';toggle.append(title,count);
+    const micro=document.createElement('div');micro.className='micro-islands'+(expanded?' expanded':'');
+    matching.forEach(topic=>{
+      const button=document.createElement('button');button.type='button';button.className='btn island'+(topic===activeIsland?' active':'');
+      const label=document.createElement('span');label.textContent=topicLabel(topic);
+      const topicCount=document.createElement('small');topicCount.textContent=SENTENCES.filter(s=>s.topic===topic).length+' Sätze';
+      button.append(label,topicCount);button.onclick=()=>{activeIsland=topic;renderIslands();renderCards();};micro.appendChild(button);
+    });
+    toggle.onclick=()=>{if(expandedMacros.has(macro))expandedMacros.delete(macro);else expandedMacros.add(macro);renderIslands();};
+    section.append(toggle,micro);host.appendChild(section);
+  });
+}
+function filtered(){let list=activeIsland==='Alle'?SENTENCES:SENTENCES.filter(s=>s.topic===activeIsland);if(dueOnly){const due=new Set(dueIds());list=list.filter(s=>due.has(s.id));}if(ratingFilter!=='all'){const target=Number(ratingFilter);list=list.filter(s=>ratingValue(s.id)===target);}return list;}
 function rowFor(s){
   const row=document.createElement('article');row.className='sent';row.dataset.id=s.id;
   const top=document.createElement('div');top.className='sent-top';
   const de=document.createElement('div');de.className='de';de.textContent=s.de;
-  const pt=document.createElement('div');pt.className='pt';pt.textContent=s.pt?.trim()||'Tradução em português pendente.';
+  const pt=document.createElement('div');pt.className='pt';pt.textContent=s.pt?.trim()||'Portugiesische Übersetzung noch nicht verfügbar.';
   const primary=mode==='shadow'?de:pt,secondary=mode==='shadow'?pt:de;secondary.classList.add('hidden');
   const meta=document.createElement('div');meta.className='card-meta';
-  const badge=document.createElement('span');badge.className='badge';badge.textContent=`${reps[s.id]||0} rep.`;meta.appendChild(badge);
-  const rating=document.createElement('div');rating.className='rating';rating.setAttribute('role','group');rating.setAttribute('aria-label','Nota da pronúncia');
-  const ratingButtons=[];const reset=document.createElement('button');reset.type='button';reset.className='rating-reset';reset.textContent='↻';reset.title='Apagar nota';reset.setAttribute('aria-label','Apagar nota de pronúncia');rating.appendChild(reset);
-  function paintRating(){const score=ratingValue(s.id);ratingButtons.forEach((b,i)=>{b.textContent=i<score?'★':'☆';b.classList.toggle('selected',i<score);});rating.setAttribute('aria-label',`Nota da pronúncia: ${score} de 5 estrelas`);}
-  for(let n=1;n<=5;n++){const star=document.createElement('button');star.type='button';star.className='star-btn';star.title=`Nota ${n} de 5`;star.setAttribute('aria-label',`Dar ${n} de 5 estrelas`);star.onclick=()=>{setRating(s.id,n);paintRating();if(ratingFilter!=='all')renderCards();};ratingButtons.push(star);rating.appendChild(star);}
+  const badge=document.createElement('span');badge.className='badge';badge.textContent=`${reps[s.id]||0} Wdh.`;meta.appendChild(badge);
+  const rating=document.createElement('div');rating.className='rating';rating.setAttribute('role','group');rating.setAttribute('aria-label','Aussprachebewertung');
+  const ratingButtons=[];const reset=document.createElement('button');reset.type='button';reset.className='rating-reset';reset.textContent='↻';reset.title='Bewertung löschen';reset.setAttribute('aria-label','Aussprachebewertung löschen');rating.appendChild(reset);
+  function paintRating(){const score=ratingValue(s.id);ratingButtons.forEach((b,i)=>{b.textContent=i<score?'★':'☆';b.classList.toggle('selected',i<score);});rating.setAttribute('aria-label',`Aussprachebewertung: ${score} von 5 Sternen`);}
+  for(let n=1;n<=5;n++){const star=document.createElement('button');star.type='button';star.className='star-btn';star.title=`Bewertung ${n} von 5`;star.setAttribute('aria-label',`${n} von 5 Sternen vergeben`);star.onclick=()=>{setRating(s.id,n);paintRating();if(ratingFilter!=='all')renderCards();};ratingButtons.push(star);rating.appendChild(star);}
   reset.onclick=()=>{setRating(s.id,0);paintRating();if(ratingFilter!=='all')renderCards();};paintRating();meta.appendChild(rating);top.append(primary,meta);
   const controls=document.createElement('div');controls.className='controls';
-  const listen=document.createElement('button');listen.className='btn';listen.textContent=mode==='shadow'?'▶ Ouvir':'▶ Tocar resposta';
+  const listen=document.createElement('button');listen.className='btn';listen.textContent=mode==='shadow'?'▶ Anhören':'▶ Antwort abspielen';
   listen.onclick=async()=>{if(playingAll){playingAll=false;stopCurrentAudio();}if(mode==='recall')await delay(Math.max(1200,Math.min(7000,900+s.de.split(/\s+/).length*320)));await speak(s);if(mode==='recall')secondary.classList.remove('hidden');};
-  const reveal=document.createElement('button');reveal.className='btn';reveal.textContent=mode==='shadow'?'Mostrar tradução':'Revelar alemão';reveal.onclick=()=>secondary.classList.toggle('hidden');
-  const repeat=document.createElement('button');repeat.className='btn';repeat.textContent='Repeti +1';repeat.onclick=()=>{reps[s.id]=(Number(reps[s.id])||0)+1;spoken++;reviews[s.id]=Date.now()+Math.max(3600000,2**Math.min(reps[s.id],8)*3600000);queueSync();renderCards();};
+  const reveal=document.createElement('button');reveal.className='btn';reveal.textContent=mode==='shadow'?'Übersetzung zeigen':'Deutsch aufdecken';reveal.onclick=()=>secondary.classList.toggle('hidden');
+  const repeat=document.createElement('button');repeat.className='btn';repeat.textContent='Wiederholt +1';repeat.onclick=()=>{reps[s.id]=(Number(reps[s.id])||0)+1;spoken++;reviews[s.id]=Date.now()+Math.max(3600000,2**Math.min(reps[s.id],8)*3600000);queueSync();renderCards();};
   controls.append(listen,reveal,repeat);row.append(top,secondary,controls);return row;
 }
-function renderCards(reset=true){if(reset)visibleCount=60;const host=$('cards'),items=filtered();host.replaceChildren();if(!items.length){const empty=document.createElement('p');empty.className='notice';empty.textContent='Nenhuma frase corresponde à ilha e à nota selecionadas.';host.appendChild(empty);}items.slice(0,visibleCount).forEach(s=>host.appendChild(rowFor(s)));const more=$('loadMore');more.classList.toggle('hidden',items.length<=visibleCount);more.textContent=`Carregar mais (${items.length-visibleCount})`;}
+function renderCards(reset=true){if(reset)visibleCount=60;const host=$('cards'),items=filtered();host.replaceChildren();if(!items.length){const empty=document.createElement('p');empty.className='notice';empty.textContent='Keine Sätze passen zu den ausgewählten Themen und Bewertungen.';host.appendChild(empty);}items.slice(0,visibleCount).forEach(s=>host.appendChild(rowFor(s)));const more=$('loadMore');more.classList.toggle('hidden',items.length<=visibleCount);more.textContent=`Mehr laden (${items.length-visibleCount})`;}
 function delay(ms){return new Promise(resolve=>setTimeout(resolve,ms));}
 function browserSpeak(text){return new Promise(resolve=>{if(!window.speechSynthesis)return resolve(false);speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='de-DE';u.rate=rate;const started=performance.now();u.onend=()=>{audioSeconds+=(performance.now()-started)/1000;queueSync();if('mediaSession'in navigator)navigator.mediaSession.playbackState='none';resolve(true);};u.onerror=()=>{if('mediaSession'in navigator)navigator.mediaSession.playbackState='none';resolve(false);};speechSynthesis.speak(u);});}
 function setMediaSession(sentence,state='playing'){
   if(!('mediaSession'in navigator))return;
-  const item=typeof sentence==='object'&&sentence?sentence:{de:String(sentence||'Sprachpraxis'),topic:'Prática de alemão'};
+  const item=typeof sentence==='object'&&sentence?sentence:{de:String(sentence||'Sprachpraxis'),topic:'Deutsch lernen'};
   currentSentence=item;
-  if('MediaMetadata'in window)navigator.mediaSession.metadata=new MediaMetadata({title:item.de||'Sprachpraxis',artist:'Prática de alemão',album:item.topic||'Sprachpraxis'});
+  if('MediaMetadata'in window)navigator.mediaSession.metadata=new MediaMetadata({title:item.de||'Sprachpraxis',artist:'Deutsch lernen',album:topicLabel(item.topic)||'Sprachpraxis'});
   navigator.mediaSession.playbackState=state;
 }
 function stopCurrentAudio(){if(currentAudioResolve)currentAudioResolve(false);else{currentAudio.pause();currentAudio.removeAttribute('src');currentAudio.load();}if(window.speechSynthesis)speechSynthesis.cancel();if('mediaSession'in navigator)navigator.mediaSession.playbackState='none';}
 function installMediaControls(){if(!('mediaSession'in navigator))return;const handlers={play:()=>currentAudio.play().then(()=>{navigator.mediaSession.playbackState='playing';}).catch(()=>{}),pause:()=>{currentAudio.pause();navigator.mediaSession.playbackState='paused';},stop:()=>{playingAll=false;stopCurrentAudio();},nexttrack:()=>{if(playingAll&&currentAudioResolve){queueSkipDirection=1;currentAudioResolve('skip');}},previoustrack:()=>{if(playingAll&&currentAudioResolve){queueSkipDirection=-1;currentAudioResolve('skip');}}};for(const [action,handler]of Object.entries(handlers)){try{navigator.mediaSession.setActionHandler(action,handler);}catch{}}}
 function playAudioUrl(url,sentence){return new Promise(resolve=>{const audio=currentAudio;let settled=false,playingSince=0,playedMs=0;currentAudioUrl=url;audio.src=url;audio.playbackRate=rate;setMediaSession(sentence,'playing');const cleanup=()=>{audio.removeEventListener('playing',onPlaying);audio.removeEventListener('pause',onPause);audio.removeEventListener('ended',onEnded);audio.removeEventListener('error',onError);};const settle=result=>{if(settled)return;settled=true;if(playingSince){playedMs+=performance.now()-playingSince;playingSince=0;}cleanup();const oldUrl=currentAudioUrl;currentAudioUrl=null;currentAudioResolve=null;audio.pause();audio.removeAttribute('src');audio.load();if(oldUrl)URL.revokeObjectURL(oldUrl);if(playedMs>0){audioSeconds+=playedMs/1000;queueSync();}if('mediaSession'in navigator)navigator.mediaSession.playbackState=result===true?'none':'paused';resolve(result);};const onPlaying=()=>{if(!playingSince)playingSince=performance.now();if('mediaSession'in navigator)navigator.mediaSession.playbackState='playing';};const onPause=()=>{if(playingSince){playedMs+=performance.now()-playingSince;playingSince=0;}if('mediaSession'in navigator&&audio.src)navigator.mediaSession.playbackState='paused';};const onEnded=()=>settle(true);const onError=()=>settle(false);audio.addEventListener('playing',onPlaying);audio.addEventListener('pause',onPause);audio.addEventListener('ended',onEnded);audio.addEventListener('error',onError);currentAudioResolve=settle;audio.play().catch(()=>settle(false));});}
 async function speak(sentence){const text=typeof sentence==='string'?sentence:sentence.de;const id=typeof sentence==='object'&&sentence?sentence.id:'';if(currentAudioResolve)stopCurrentAudio();if(window.speechSynthesis)speechSynthesis.cancel();setMediaSession(sentence,'playing');const config=window.SPRACHPAXIS_AUDIO_CONFIG||{};if((config.provider==='blob-cache'||config.provider==='azure')&&config.audioEndpoint&&id){try{const response=await fetch(`${config.audioEndpoint}?id=${encodeURIComponent(id)}`);if(!response.ok)throw Error(`HTTP ${response.status}`);const blobUrl=URL.createObjectURL(await response.blob());const heard=await playAudioUrl(blobUrl,sentence);if(heard===true)return true;if(heard==='skip')return heard;if(heard===false&&!playingAll)return false;}catch{}}return browserSpeak(text);}
-$('shadowBtn').onclick=()=>{mode='shadow';$('shadowBtn').classList.add('active');$('recallBtn').classList.remove('active');renderCards();};$('recallBtn').onclick=()=>{mode='recall';$('recallBtn').classList.add('active');$('shadowBtn').classList.remove('active');renderCards();};$('allBtn').onclick=()=>{activeIsland='Todos';dueOnly=false;$('dueBtn').classList.remove('active');renderIslands();renderCards();};$('dueBtn').onclick=()=>{dueOnly=!dueOnly;$('dueBtn').classList.toggle('active');renderCards();};$('ratingFilter').onchange=e=>{ratingFilter=e.target.value;renderCards();};$('rate').oninput=e=>{rate=Number(e.target.value);$('rateValue').textContent=`${rate.toFixed(2)}×`;if(currentAudio)currentAudio.playbackRate=rate;};$('stopBtn').onclick=()=>{playingAll=false;stopCurrentAudio();};
+$('shadowBtn').onclick=()=>{mode='shadow';$('shadowBtn').classList.add('active');$('recallBtn').classList.remove('active');renderCards();};$('recallBtn').onclick=()=>{mode='recall';$('recallBtn').classList.add('active');$('shadowBtn').classList.remove('active');renderCards();};$('allBtn').onclick=()=>{activeIsland='Alle';dueOnly=false;$('dueBtn').classList.remove('active');renderIslands();renderCards();};$('dueBtn').onclick=()=>{dueOnly=!dueOnly;$('dueBtn').classList.toggle('active');renderCards();};$('ratingFilter').onchange=e=>{ratingFilter=e.target.value;renderCards();};$('rate').oninput=e=>{rate=Number(e.target.value);$('rateValue').textContent=rate.toFixed(2).replace('.',',')+'×';if(currentAudio)currentAudio.playbackRate=rate;};$('stopBtn').onclick=()=>{playingAll=false;stopCurrentAudio();};
 $('loadMore').onclick=()=>{visibleCount+=60;renderCards(false);};
  $('playAllBtn').onclick=async()=>{if(playingAll)return;playingAll=true;const queue=filtered();installMediaControls();for(let i=0;i<queue.length;i++){if(!playingAll)break;const s=queue[i];const row=[...document.querySelectorAll('.sent')].find(x=>x.dataset.id===s.id);if(row){row.classList.add('playing');if(document.visibilityState==='visible')row.scrollIntoView({behavior:'smooth',block:'center'});}const result=await speak(s);if(result==='skip'){if(queueSkipDirection<0)i=Math.max(-1,i-2);queueSkipDirection=1;continue;}if(!playingAll)break;reps[s.id]=(Number(reps[s.id])||0)+1;spoken++;reviews[s.id]=Date.now()+Math.max(3600000,2**Math.min(reps[s.id],8)*3600000);queueSync();row?.classList.remove('playing');}playingAll=false;if('mediaSession'in navigator)navigator.mediaSession.playbackState='none';renderCards();};
-$('exportBtn').onclick=()=>{localSave();const blob=new Blob([JSON.stringify({reps,reviews,ratings,spoken,audioSeconds},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sprachpraxis-progresso.json';a.click();URL.revokeObjectURL(a.href);};
-$('progressFile').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{const old=JSON.parse(await file.text());reps=mergeMap(reps,migrateMap(old.reps||{}));reviews=mergeMap(reviews,migrateMap(old.reviews||{}));ratings=mergeRatings(ratings,migrateMap(old.ratings||{}));spoken=Math.max(spoken,Number(old.spoken)||0);audioSeconds=Math.max(audioSeconds,Number(old.audioSeconds)||0);localSave();updateStats();if(user)await syncToCloud();setStatus('Progresso importado e sincronizado.');}catch{setStatus('Não foi possível importar esse backup.');}e.target.value='';};
+
 installMediaControls();if('serviceWorker'in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js').catch(()=>{});init();
-$('loginBtn').onclick=()=>login().catch(error=>{console.error('Falha ao iniciar login Microsoft:',error);setStatus(`Falha no login Microsoft: ${error.errorCode||error.message||'erro desconhecido'}`);});
-$('logoutBtn').onclick=()=>logout().catch(error=>{console.error(error);setStatus('Não foi possível sair da conta Microsoft.');});
+$('loginBtn').onclick=()=>login().catch(error=>{console.error('Fehler beim Start der Microsoft-Anmeldung:',error);setStatus(`Fehler bei der Microsoft-Anmeldung: ${error.errorCode||error.message||'unbekannter Fehler'}`);});
+$('logoutBtn').onclick=()=>logout().catch(error=>{console.error(error);setStatus('Abmelden bei Microsoft nicht möglich.');});
 </script></body></html>
