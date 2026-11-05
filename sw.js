@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sprachpraxis-shell-v3';
+const CACHE_NAME = 'sprachpraxis-shell-v4';
 const APP_FILES = [
   './',
   './sprachpraxis-c1.html',
